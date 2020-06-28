@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container-fluid">
+    <h1 class="mb-4">5 day's Forecast</h1>
+
+    <div class="row forecast-blok">
+        @foreach (var weather in ViewBag.Wheater)
+        {
+            <div class="blok">
+                <div class="inner-blok">
+                    <b>@weather.Date.DayOfWeek</b>
+                </div>
+                <div class="inner-blok">
+                    <b>Temp:</b> @weather.TemperatureC
+                </div>
+                <div class="inner-blok">
+                    <b>Clouds:</b> @weather.CloudCoverage%
+                </div>
+                <div class="inner-blok">
+                    <b>Summary:</b> @weather.Summary
+                </div>
+                <div class="inner-blok">
+                    <b>Predicted solar energy:</b><br>@weather.SolarEnergy watts
+                </div>
+            </div>
+        }
+    </div>
+</div>
